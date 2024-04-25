@@ -5,22 +5,22 @@ import RenderTag from './RenderTag';
 
 const hotQuestions = [
   {
-    _id: 1,
+    _id: '1',
     title:
       'Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)?',
   },
-  { _id: 2, title: 'How to cache API requests?' },
-  { _id: 3, title: 'Best form handling library?' },
-  { _id: 4, title: 'Redux Toolkit Not Updating State as Expected' },
-  { _id: 5, title: 'Async/Await Function Not Handling Errors Properly' },
+  { _id: '2', title: 'How to cache API requests?' },
+  { _id: '3', title: 'Best form handling library?' },
+  { _id: '4', title: 'Redux Toolkit Not Updating State as Expected' },
+  { _id: '5', title: 'Async/Await Function Not Handling Errors Properly' },
 ];
 
 const popularTags = [
-  { _id: 1, name: 'javascript', totalQuestions: 5 },
-  { _id: 2, name: 'react', totalQuestions: 5 },
-  { _id: 3, name: 'vuejs', totalQuestions: 15 },
-  { _id: 4, name: 'redux', totalQuestions: 2 },
-  { _id: 5, name: 'next', totalQuestions: 10 },
+  { _id: '1', name: 'javascript', totalQuestions: 5 },
+  { _id: '2', name: 'react', totalQuestions: 5 },
+  { _id: '3', name: 'vuejs', totalQuestions: 15 },
+  { _id: '4', name: 'redux', totalQuestions: 2 },
+  { _id: '5', name: 'next', totalQuestions: 10 },
 ];
 
 const RightSidebar = () => {
@@ -31,7 +31,7 @@ const RightSidebar = () => {
         <div className='mt-7 flex w-full flex-col gap-[30px]'>
           {hotQuestions.map((question) => (
             <Link
-              href={`/question/${question._id}`}
+              href={`/questions/${question._id}`}
               key={question._id}
               className='flex cursor-pointer items-center justify-between gap-7'>
               <p className='body-medium text-dark500_light700'>
