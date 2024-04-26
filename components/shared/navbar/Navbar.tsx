@@ -14,11 +14,11 @@ const Navbar = () => {
           src='/assets/images/site-logo.svg'
           width={23}
           height={23}
-          alt='Dev Overflow'
+          alt='Answer Hub'
         />
 
         <p className='h2-bold text-dark-100 dark:text-light-900 max-sm:hidden'>
-          Dev <span className='text-primary-500'>Overflow</span>
+          Answer <span className='text-primary-500'>Hub</span>
         </p>
       </Link>
 
