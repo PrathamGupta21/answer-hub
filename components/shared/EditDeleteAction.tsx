@@ -15,7 +15,6 @@ const EditDeleteAction = ({ type, itemId }: Props) => {
   const router = useRouter();
 
   const handleEdit = () => {
-    // TODO
     router.push(`/question/edit/${JSON.parse(itemId)}`);
   };
 
