@@ -3,10 +3,13 @@ import NoResult from '@/components/shared/NoResult';
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar';
 import { TagFilters } from '@/constants/filters';
 import { getAllTags } from '@/lib/actions/tag.action';
+import { SearchParamsProps } from '@/types';
 import Link from 'next/link';
 
-const Page = async () => {
-  const result = await getAllTags({});
+const Page = async ({ searchParams }: SearchParamsProps) => {
+  const result = await getAllTags({
+    searchQuery: searchParams.q,
+  });
 
   return (
     <>
@@ -29,7 +32,7 @@ const Page = async () => {
 
       <section className='mt-12 flex flex-wrap gap-4'>
         {result.tags.length > 0 ? (
-          result.tags.map((tag) => (
+          result.tags.map((tag: any) => (
             <Link
               href={`/tags/${tag._id}`}
               key={tag._id}
