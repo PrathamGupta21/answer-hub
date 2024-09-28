@@ -6,6 +6,7 @@ import { auth } from '@clerk/nextjs/server';
 import { SignedIn } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { getJoinedDate } from '@/lib/utils';
@@ -16,6 +17,8 @@ import AnswersTab from '@/components/shared/AnswersTab';
 
 const Page = async ({ params, searchParams }: URLProps) => {
   const { userId: clerkId } = auth();
+  if (!clerkId) redirect('/sign-in');
+
   const userInfo = await getUserInfo({ userId: params.id });
 
   return (
